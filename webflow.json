@@ -1,0 +1,20 @@
+{
+  "library": {
+    "id": "hlym-webflow-components",
+    "name": "HLYM Webflow Components",
+    "description": "Styled React code components for HLYM marketing experiences.",
+    "components": ["src/webflow/**/*.webflow.tsx"],
+    "globals": "./src/webflow/globals.webflow.ts",
+    "bundleConfig": "./webpack.webflow.cjs",
+    "renderer": {
+      "client": "@webflow/react",
+      "server": "@webflow/styled-components-utils/server"
+    }
+  },
+  "devlink": {
+    "rootDir": "./devlink",
+    "cssModules": true,
+    "overwriteModule": true,
+    "relativeHrefRoot": "/"
+  }
+}
