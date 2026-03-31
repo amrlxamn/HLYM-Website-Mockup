@@ -29,7 +29,6 @@ export const FooterColumnRoot = styled.div`
 
 export const FooterColumnTitle = styled.h4`
   color: #ffffff90;
-  font-family: var(--font-family-base);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;

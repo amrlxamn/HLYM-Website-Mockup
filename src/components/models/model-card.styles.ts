@@ -38,7 +38,6 @@ export const ModelCopy = styled.div<{ $compact: boolean }>`
 
 export const ModelNumber = styled.p`
   color: #00000008;
-  font-family: var(--font-family-base);
   font-size: 80px;
   font-weight: 700;
   letter-spacing: -2px;
@@ -53,7 +52,6 @@ export const ModelCategory = styled.div`
 
   p {
     color: #00000060;
-    font-family: var(--font-family-base);
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -70,7 +68,6 @@ export const ModelCategoryAccent = styled.span`
 
 export const ModelName = styled.h3`
   color: #0a0a0a;
-  font-family: var(--font-family-base);
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -93,14 +90,12 @@ export const ModelSpecGroup = styled.div<{ $compact: boolean }>`
 
   strong {
     color: #0a0a0a;
-    font-family: var(--font-family-base);
     font-size: ${({ $compact }) => ($compact ? "16px" : "20px")};
     font-weight: 600;
   }
 
   span {
     color: #00000040;
-    font-family: var(--font-family-base);
     font-size: ${({ $compact }) => ($compact ? "8px" : "9px")};
     font-weight: ${({ $compact }) => ($compact ? 500 : 600)};
     letter-spacing: 2px;
@@ -123,7 +118,6 @@ export const ModelPriceRow = styled.div`
 
   strong {
     color: #0a0a0a;
-    font-family: var(--font-family-base);
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -136,7 +130,6 @@ export const ModelPriceLink = styled.a`
   color: #00000050;
   display: inline-flex;
   gap: 8px;
-  font-family: var(--font-family-base);
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 2px;

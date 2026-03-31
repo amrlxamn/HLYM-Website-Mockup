@@ -3,18 +3,20 @@ import { Container } from "@/styles/layout";
 
 export const ModelsSectionRoot = styled.section`
   --models-desktop-inset: clamp(24px, 4vw, 48px);
+  --models-section-gap: 72px;
   background: #f8f8f8;
-  margin-top: 120px;
-  margin-bottom: 120px;
+  padding: var(--models-section-gap) 0;
   position: relative;
 
   @media (max-width: 980px) {
     --models-desktop-inset: 0px;
+    --models-section-gap: 0px;
     padding: 0 0 80px;
   }
 `;
 
 export const ModelsBackground = styled.div`
+  background-color: #f8f8f8;
   background-image: url("/assets/hlym/product-bg.jpg");
   background-position: center;
   background-size: cover;
@@ -37,7 +39,6 @@ export const ModelsHeader = styled(Container)`
 
 export const ModelsHeading = styled.h2`
   color: #00000012;
-  font-family: var(--font-family-base);
   font-size: 160px;
   font-weight: 700;
   left: 0;

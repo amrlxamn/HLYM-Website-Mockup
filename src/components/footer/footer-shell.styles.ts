@@ -58,7 +58,6 @@ export const FooterTopLine = styled.div`
 
 export const YamahaWatermark = styled.p`
   color: #ffffff03;
-  font-family: var(--font-family-base);
   font-size: 220px;
   font-weight: 900;
   left: 100px;

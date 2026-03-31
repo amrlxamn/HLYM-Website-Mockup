@@ -37,7 +37,6 @@ export const PromoCardEyebrow = styled.p`
 `;
 
 export const PromoCardHeading = styled.h3`
-  font-family: var(--font-family-base);
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.04em;
   line-height: 0.95;

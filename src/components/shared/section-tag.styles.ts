@@ -32,7 +32,6 @@ export const SectionTagRoot = styled.div<{
 
   p {
     color: ${({ $accent }) => ($accent ? "var(--red)" : "var(--color-text-subtle)")};
-    font-family: var(--font-family-base);
     font-size: ${({ $accent }) => ($accent ? "12px" : "10px")};
     font-weight: ${({ $accent }) => ($accent ? 700 : 600)};
     letter-spacing: ${({ $accent }) => ($accent ? "4px" : "3px")};

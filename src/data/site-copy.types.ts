@@ -84,6 +84,8 @@ export type NewsCopy = {
   ariaLabel: string;
   featuredBadgeLabel: string;
   heading: string;
+  nextMiniNewsLabel: string;
+  previousMiniNewsLabel: string;
   tagLabel: string;
   viewAllLabel: string;
 };

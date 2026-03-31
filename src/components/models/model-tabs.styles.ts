@@ -46,7 +46,6 @@ export const ModelTabButton = styled.button<{
 
     return $orientation === "vertical" ? "#00000025" : "#00000055";
   }};
-  font-family: var(--font-family-base);
   font-size: ${({ $orientation }) => ($orientation === "vertical" ? "9px" : "inherit")};
   font-weight: ${({ $active }) => ($active ? 700 : 600)};
   letter-spacing: ${({ $orientation }) => ($orientation === "vertical" ? "2px" : "normal")};

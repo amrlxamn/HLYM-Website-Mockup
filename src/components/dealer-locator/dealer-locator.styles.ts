@@ -188,7 +188,6 @@ export const DealerMapCanvas = styled.div`
 `;
 
 export const DealerHeading = styled.h2`
-  font-family: var(--font-family-base);
   font-size: 48px;
   font-weight: 600;
   letter-spacing: -2.5px;
@@ -296,7 +295,6 @@ export const DealerInfoEyebrow = styled.p`
 
 export const DealerInfoTitle = styled.h3`
   color: #090909;
-  font-family: var(--font-family-base);
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -1px;

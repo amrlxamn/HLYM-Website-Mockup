@@ -34,7 +34,6 @@ export const SectionHeaderCopy = styled.div<{ $align: "center" | "left" }>`
 export const SectionHeaderTitle = styled.h2<{ $tone: "dark" | "light" }>`
   color: ${({ $tone }) =>
     $tone === "dark" ? "var(--color-text-inverse)" : "var(--color-text-primary)"};
-  font-family: var(--font-family-base);
   font-size: 56px;
   font-weight: 800;
   letter-spacing: -2px;

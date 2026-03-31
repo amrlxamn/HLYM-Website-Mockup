@@ -48,3 +48,9 @@ export const NEWS_UPDATES: readonly NewsCard[] = [
     title: "exploring malaysia's east coast: a ténéré 700 journey"
   }
 ] as const;
+
+export const NEWS_MINI_RAIL: readonly NewsCard[] = [
+  FEATURED_NEWS,
+  ...NEWS_HIGHLIGHTS,
+  ...NEWS_UPDATES
+] as const;

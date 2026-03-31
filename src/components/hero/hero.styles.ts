@@ -77,7 +77,6 @@ export const HeroMutedText = styled.span`
 
 export const HeroScrollText = styled.span`
   color: #ffffff25;
-  font-family: var(--font-family-base);
   font-size: 9px;
   letter-spacing: 4px;
   text-transform: uppercase;

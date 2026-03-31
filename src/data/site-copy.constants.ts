@@ -89,6 +89,8 @@ export const SITE_COPY: SiteCopy = {
     ariaLabel: "latest news section",
     featuredBadgeLabel: "featured",
     heading: "stories that move",
+    nextMiniNewsLabel: "show next news cards",
+    previousMiniNewsLabel: "show previous news cards",
     tagLabel: "latest news",
     viewAllLabel: "view all"
   }

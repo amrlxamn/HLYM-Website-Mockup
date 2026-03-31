@@ -17,7 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     --container: ${({ theme }) => theme.layout.container};
     --duration-base: ${({ theme }) => theme.motion.duration.base};
     --easing-standard: ${({ theme }) => theme.motion.easing.standard};
-    --font-family-base: ${({ theme }) => theme.typography.body};
     --header-height-main: 76px;
     --header-height-utility: 34px;
     --header-height-total: calc(
@@ -44,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: var(--bg);
     color: var(--color-text-inverse);
-    font-family: var(--font-family-base);
+    font-family: ${({ theme }) => theme.typography.body};
     overflow-x: clip; /* clip instead of hidden — hidden breaks position: sticky */
   }
 

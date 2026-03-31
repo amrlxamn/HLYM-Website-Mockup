@@ -8,7 +8,6 @@ export const FooterBrandColumn = styled.div`
 `;
 
 export const FooterBrandTitle = styled.h3`
-  font-family: var(--font-family-base);
   font-size: 36px;
   font-weight: 800;
   letter-spacing: 8px;

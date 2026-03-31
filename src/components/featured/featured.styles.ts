@@ -58,7 +58,6 @@ export const FeaturedCardTag = styled.p`
 `;
 
 export const FeaturedCardTitle = styled.h3`
-  font-family: var(--font-family-base);
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -125,7 +124,6 @@ export const MtOverlayTop = styled.div`
 
 export const MtWatermark = styled.span`
   color: #ffffff06;
-  font-family: var(--font-family-base);
   font-size: 320px;
   font-weight: 700;
   left: -20px;
@@ -148,7 +146,6 @@ export const MtCopy = styled.div`
 `;
 
 export const MtHeading = styled.h3`
-  font-family: var(--font-family-base);
   font-size: 48px;
   letter-spacing: -2px;
   line-height: 1;
@@ -200,7 +197,6 @@ export const MtPointItem = styled.li`
 `;
 
 export const MtPrice = styled.strong`
-  font-family: var(--font-family-base);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -254,7 +250,6 @@ export const CategoryTileTag = styled.p`
 `;
 
 export const CategoryTileTitle = styled.h3`
-  font-family: var(--font-family-base);
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -304,7 +299,6 @@ export const FeaturedBottomCta = styled(Container)`
 `;
 
 export const FeaturedBottomTitle = styled.h3`
-  font-family: var(--font-family-base);
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.5px;
