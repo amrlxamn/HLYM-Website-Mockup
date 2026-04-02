@@ -40,6 +40,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  html[data-custom-cursor=""] body,
+  html[data-custom-cursor=""] a,
+  html[data-custom-cursor=""] button {
+    cursor: none;
+  }
+
   body {
     background: var(--bg);
     color: var(--color-text-inverse);

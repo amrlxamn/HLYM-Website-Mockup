@@ -13,5 +13,6 @@ describe("App", () => {
     expect(view.getByRole("region", { name: toSentenceCase(hero.ariaLabel) })).toBeInTheDocument();
     expect(view.getByRole("region", { name: toSentenceCase(news.ariaLabel) })).toBeInTheDocument();
     expect(view.getByText(toSentenceCase(footer.copyright))).toBeInTheDocument();
+    expect(view.queryByLabelText("custom cursor")).not.toBeInTheDocument();
   });
 });

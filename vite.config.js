@@ -24,6 +24,7 @@ export default defineConfig({
         coverage: {
             exclude: [
                 ".claude/**",
+                "**/node_modules/**",
                 ".webflow/**",
                 "**/dist/**",
                 "deliverables/**",
@@ -39,7 +40,8 @@ export default defineConfig({
             reporter: ["text", "html"]
         },
         environment: "jsdom",
-        exclude: [".claude/**", "deliverables/**", "proposal/**"],
+        exclude: [".claude/**", "**/node_modules/**", "deliverables/**", "proposal/**"],
+        include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
         setupFiles: "./src/test/setup.ts"
     }
 });

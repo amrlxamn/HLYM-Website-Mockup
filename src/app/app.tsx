@@ -1,4 +1,5 @@
 import { DealerLocatorSection } from "@/components/dealer-locator/dealer-locator-section";
+import { CustomCursor } from "@/components/cursor/custom-cursor";
 import { FooterSection } from "@/components/footer/footer-section";
 import { FeaturedSection } from "@/components/featured/featured-section";
 import { SiteHeader } from "@/components/header/site-header";
@@ -14,6 +15,7 @@ export function App() {
 
   return (
     <>
+      <CustomCursor />
       {!isRemoved && <SplashScreen isVisible={isVisible} onComplete={onComplete} />}
       <PageShell id="top">
         <SiteHeader />
