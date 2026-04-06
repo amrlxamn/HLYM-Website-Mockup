@@ -1,6 +1,8 @@
 import { CustomCursorRoot } from "./custom-cursor.styles";
 import { useCustomCursor } from "./use-custom-cursor";
 
+const CURSOR_RING_SIZE = 34;
+
 export function CustomCursor() {
   const { isActive, isEnabled, isVisible, x, y } = useCustomCursor();
 
@@ -13,8 +15,8 @@ export function CustomCursor() {
       animate={{
         opacity: isVisible ? 1 : 0,
         scale: isActive ? 0.82 : 1,
-        x: x - 17,
-        y: y - 17
+        x: x - CURSOR_RING_SIZE / 2,
+        y: y - CURSOR_RING_SIZE / 2
       }}
       aria-hidden="true"
       initial={false}

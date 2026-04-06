@@ -25,7 +25,6 @@ export function useCustomCursor() {
     const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
     const syncCursorMode = () => {
-      document.documentElement.toggleAttribute("data-custom-cursor", mediaQuery.matches);
       setState((current) => ({
         ...current,
         isEnabled: mediaQuery.matches,
@@ -62,7 +61,6 @@ export function useCustomCursor() {
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      document.documentElement.removeAttribute("data-custom-cursor");
       mediaQuery.removeEventListener("change", syncCursorMode);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseleave", handleMouseLeave);

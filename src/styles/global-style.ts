@@ -37,13 +37,8 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     margin: 0;
     min-height: 100%;
+    overflow-x: clip;
     padding: 0;
-  }
-
-  html[data-custom-cursor=""] body,
-  html[data-custom-cursor=""] a,
-  html[data-custom-cursor=""] button {
-    cursor: none;
   }
 
   body {
