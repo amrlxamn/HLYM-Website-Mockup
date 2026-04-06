@@ -47,7 +47,7 @@ export function FeaturedModelSpotlight() {
     offset: ["start start", "end end"]
   });
 
-  const scaleTarget = shouldReduceMotion ? ([1, 1, 1] as const) : ([0.92, 1.08, 0.92] as const);
+  const scaleTarget = shouldReduceMotion ? [1, 1, 1] : [0.92, 1.08, 0.92];
   const scale = useSpring(
     useTransform(scrollYProgress, [0, 0.5, 1], scaleTarget),
     SPOTLIGHT_SPRING
@@ -147,25 +147,35 @@ export function FeaturedModelSpotlight() {
   return (
     <FeaturedModelSpotlightRoot aria-label={toSentenceCase(spotlight.name)} ref={sectionRef}>
       <FeaturedModelSpotlightGrid>
-        {spotlight.callouts.map((callout, index) => (
-          <FeaturedModelSpotlightCallout
-            key={callout.numberLabel}
-            $position={CALLOUT_POSITIONS[index]}
-            as={motion.div}
-            style={{
-              opacity: shouldReduceMotion ? 1 : calloutOpacities[index],
-              y: shouldReduceMotion ? 0 : calloutYTransforms[index]
-            }}
-          >
-            <FeaturedModelSpotlightCalloutNumber>
-              {callout.numberLabel}
-            </FeaturedModelSpotlightCalloutNumber>
-            <FeaturedModelSpotlightCalloutTitle>{callout.title}</FeaturedModelSpotlightCalloutTitle>
-            <FeaturedModelSpotlightCalloutDescription>
-              {callout.description}
-            </FeaturedModelSpotlightCalloutDescription>
-          </FeaturedModelSpotlightCallout>
-        ))}
+        {spotlight.callouts.map((callout, index) => {
+          const position = CALLOUT_POSITIONS[index];
+          const opacity = calloutOpacities[index];
+          const y = calloutYTransforms[index];
+
+          if (!position || !opacity || !y) {
+            return null;
+          }
+
+          return (
+            <FeaturedModelSpotlightCallout
+              key={callout.numberLabel}
+              $position={position}
+              as={motion.div}
+              style={{
+                opacity: shouldReduceMotion ? 1 : opacity,
+                y: shouldReduceMotion ? 0 : y
+              }}
+            >
+              <FeaturedModelSpotlightCalloutNumber>
+                {callout.numberLabel}
+              </FeaturedModelSpotlightCalloutNumber>
+              <FeaturedModelSpotlightCalloutTitle>{callout.title}</FeaturedModelSpotlightCalloutTitle>
+              <FeaturedModelSpotlightCalloutDescription>
+                {callout.description}
+              </FeaturedModelSpotlightCalloutDescription>
+            </FeaturedModelSpotlightCallout>
+          );
+        })}
 
         <FeaturedModelSpotlightStage>
           <FeaturedModelSpotlightImageWrap>
