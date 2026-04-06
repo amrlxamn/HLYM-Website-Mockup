@@ -1,4 +1,9 @@
-import type { CategoryTile, EditorialPoint, FeaturedCard } from "@/data/site-content.types";
+import type {
+  CategoryTile,
+  EditorialPoint,
+  FeaturedCard,
+  FeaturedModelSpotlight
+} from "@/data/site-content.types";
 
 export const FEATURED_CARDS: readonly FeaturedCard[] = [
   {
@@ -61,3 +66,52 @@ export const CATEGORY_TILES: readonly CategoryTile[] = [
     tag: "big bikes"
   }
 ] as const;
+
+const TRACER_360_FRAMES: readonly string[] = [
+  "/assets/hlym/tracer-9-gt-360/frame-005.png", // 0°   — direct front
+  "/assets/hlym/tracer-9-gt-360/frame-003.png", // 60°  — front 3/4 right
+  "/assets/hlym/tracer-9-gt-360/frame-006.png", // 90°  — left side profile
+  "/assets/hlym/tracer-9-gt-360/frame-004.png", // 180° — direct rear
+  "/assets/hlym/tracer-9-gt-360/frame-001.png", // 225° — rear 3/4 right
+  "/assets/hlym/tracer-9-gt-360/frame-002.png" // 270° — right side profile
+];
+
+export const FEATURED_MODEL_SPOTLIGHT: FeaturedModelSpotlight = {
+  alt: "yamaha tracer 9 gt sport touring spotlight",
+  callouts: [
+    {
+      description: "890cc crossplane cp3 engine with ycc-t electronic throttle.",
+      numberLabel: "01",
+      title: "119ps peak power"
+    },
+    {
+      description: "kyb electronically controlled suspension with auto-damping.",
+      numberLabel: "02",
+      title: "intelligent ride"
+    },
+    {
+      description: "7-inch tft with garmin nav and y-connect integration.",
+      numberLabel: "03",
+      title: "connected cockpit"
+    },
+    {
+      description: "cruise control, heated grips, and panniers for all-day touring.",
+      numberLabel: "04",
+      title: "grand touring"
+    },
+    {
+      description: "6-axis imu with lean-sensitive traction and slide control.",
+      numberLabel: "05",
+      title: "total control"
+    }
+  ],
+  description:
+    "the tracer 9 gt is built for riders who refuse to choose between sport performance and " +
+    "long-distance versatility — a true road conqueror with 890cc crossplane power and " +
+    "intelligent electronics for every journey.",
+  frames: TRACER_360_FRAMES,
+  image: "/assets/hlym/tracer-9-gt-spotlight.png",
+  name: "tracer 9 gt",
+  price: "from rm71,888",
+  tagLabel: "sport touring"
+} as const;

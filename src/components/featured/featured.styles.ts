@@ -328,3 +328,145 @@ export const FeaturedCtaButton = styled.a`
     width: 16px;
   }
 `;
+
+export const FeaturedModelSpotlightRoot = styled.article`
+  background: #1a1a1a;
+  height: 600vh;
+  margin-top: 28px;
+  overflow-x: clip;
+  position: relative;
+
+  @media (max-width: 980px) {
+    height: 450vh;
+    margin-top: 20px;
+  }
+`;
+
+export const FeaturedModelSpotlightGrid = styled(Container)`
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: clamp(48px, 8vw, 96px) 0;
+  position: sticky;
+  top: 0;
+
+  @media (max-width: 1160px) {
+    display: block;
+    height: 100vh;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+  }
+`;
+
+export const FeaturedModelSpotlightCallout = styled.div<{
+  $position: "top-left" | "right" | "bottom-left";
+}>`
+  color: #fff;
+  max-width: clamp(240px, 28vw, 380px);
+  opacity: 0;
+  position: absolute;
+  will-change: opacity, transform;
+  z-index: 2;
+
+  ${({ $position }) => {
+    switch ($position) {
+      case "top-left":
+        return `left: 0; top: 20%;`;
+      case "right":
+        return `right: 0; top: 40%; text-align: right;`;
+      case "bottom-left":
+        return `left: 0; bottom: 12%;`;
+    }
+  }}
+
+  @media (max-width: 1160px) {
+    bottom: auto;
+    left: 20px;
+    max-width: none;
+    position: absolute;
+    right: 20px;
+    text-align: left;
+    top: auto;
+    bottom: 10%;
+  }
+`;
+
+export const FeaturedModelSpotlightCalloutNumber = styled.p`
+  color: #ffffff55;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+`;
+
+export const FeaturedModelSpotlightCalloutTitle = styled.h4`
+  font-size: clamp(32px, 4.5vw, 64px);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  margin: 0;
+  text-transform: uppercase;
+
+  @media (max-width: 1160px) {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+`;
+
+export const FeaturedModelSpotlightCalloutDescription = styled.p`
+  color: #ffffffaa;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 14px 0 0;
+`;
+
+export const FeaturedModelSpotlightStage = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  &::before {
+    background: radial-gradient(circle at center, #ffffff08 0%, transparent 70%);
+    border-radius: 50%;
+    content: "";
+    height: 120%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  @media (max-width: 1160px) {
+    height: 40vh;
+    margin: 6vh auto 0;
+    width: 100%;
+  }
+`;
+
+export const FeaturedModelSpotlightImageWrap = styled.div`
+  filter: drop-shadow(0 32px 56px #00000090);
+  position: relative;
+  width: min(85%, 1100px);
+  will-change: transform;
+
+  img,
+  canvas {
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  @media (max-width: 1160px) {
+    width: min(80%, 300px);
+  }
+`;

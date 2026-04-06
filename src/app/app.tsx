@@ -1,6 +1,7 @@
 import { DealerLocatorSection } from "@/components/dealer-locator/dealer-locator-section";
 import { CustomCursor } from "@/components/cursor/custom-cursor";
 import { FooterSection } from "@/components/footer/footer-section";
+import { FeaturedModelSpotlight } from "@/components/featured/featured-model-spotlight";
 import { FeaturedSection } from "@/components/featured/featured-section";
 import { SiteHeader } from "@/components/header/site-header";
 import { HeroSection } from "@/components/hero/hero-section";
@@ -23,6 +24,7 @@ export function App() {
           <HeroSection />
           <ModelsSection />
           <FeaturedSection />
+          <FeaturedModelSpotlight />
           <NewsSection />
           <DealerLocatorSection />
           <FooterSection />

@@ -80,6 +80,29 @@ export type CategoryTile = {
   tag: string;
 };
 
+export type FeaturedModelSpotlightCallout = {
+  description: string;
+  numberLabel: string;
+  title: string;
+};
+
+export type FeaturedModelSpotlight = {
+  alt: string;
+  callouts: readonly [
+    FeaturedModelSpotlightCallout,
+    FeaturedModelSpotlightCallout,
+    FeaturedModelSpotlightCallout,
+    FeaturedModelSpotlightCallout,
+    FeaturedModelSpotlightCallout
+  ];
+  description: string;
+  frames?: readonly string[];
+  image: string;
+  name: string;
+  price: string;
+  tagLabel: string;
+};
+
 export type FeaturedNews = {
   alt: string;
   dateLabel: string;
