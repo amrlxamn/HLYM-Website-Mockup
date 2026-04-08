@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { DEALER_LOCATIONS } from "@/data/dealer-locations.constants";
 import { toSentenceCase } from "@/lib/to-sentence-case";
 import { DealerLocatorContent } from "./dealer-locator-content";
@@ -12,6 +12,7 @@ import { SITE_COPY } from "@/data/site-copy.constants";
 
 export function DealerLocatorSection() {
   const dealerLocatorCopy = SITE_COPY.dealerLocator;
+  const hasAutoSelectedNearestDealer = useRef(false);
   const {
     panelDirection,
     selectedDealer,
@@ -30,25 +31,30 @@ export function DealerLocatorSection() {
   });
 
   useEffect(() => {
-    if (!coordinates) {
+    if (!coordinates || hasAutoSelectedNearestDealer.current) {
       return;
     }
 
     const nearestDealer = getNearestDealer(coordinates, DEALER_LOCATIONS);
 
-    if (!nearestDealer || nearestDealer.id === selectedDealerId) {
+    if (!nearestDealer) {
       return;
     }
 
-    setSelectedDealerId(nearestDealer.id);
+    hasAutoSelectedNearestDealer.current = true;
+
+    if (nearestDealer.id !== selectedDealerId) {
+      setSelectedDealerId(nearestDealer.id);
+    }
   }, [coordinates, selectedDealerId, setSelectedDealerId]);
 
   return (
     <DealerLocatorSectionRoot aria-label={toSentenceCase(dealerLocatorCopy.ariaLabel)}>
       <DealerMapStageView
-        dealers={selectedRegionDealers}
+        dealers={DEALER_LOCATIONS}
         onSelectDealer={setSelectedDealerId}
         route={route}
+        selectedDealer={selectedDealer}
         selectedDealerId={selectedDealerId}
         userCoordinates={coordinates}
       />

@@ -15,6 +15,7 @@ type DealerMapMapboxStageProps = {
   dealers: readonly DealerLocation[];
   onSelectDealer: (dealerId: string) => void;
   route: DealerRoute | null;
+  selectedDealer: DealerLocation;
   selectedDealerId: string;
   userCoordinates: BrowserCoordinates | null;
 };
@@ -23,12 +24,17 @@ export function DealerMapMapboxStage({
   dealers,
   onSelectDealer,
   route,
+  selectedDealer,
   selectedDealerId,
   userCoordinates
 }: DealerMapMapboxStageProps) {
   const dealerLocatorCopy = SITE_COPY.dealerLocator;
   const { canvasRef, hasMapInitError, mapInstance } = useDealerMapInstance();
 
+  useDealerMapRoute({
+    mapInstance,
+    route
+  });
   useDealerMapMarkers({
     dealers,
     mapInstance,
@@ -36,14 +42,9 @@ export function DealerMapMapboxStage({
     selectedDealerId
   });
   useDealerMapCamera({
-    dealers,
     mapInstance,
-    selectedDealerId,
+    selectedDealer,
     userCoordinates
-  });
-  useDealerMapRoute({
-    mapInstance,
-    route
   });
   useDealerMapUserLocation({
     coordinates: userCoordinates,

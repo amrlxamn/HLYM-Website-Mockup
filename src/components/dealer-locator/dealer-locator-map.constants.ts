@@ -1,5 +1,6 @@
 export const DEALER_LOCATOR_MAP_CONFIG = {
   accessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN ?? "",
+  autoRouteMaxDistanceKilometers: 120,
   bearing: -24,
   center: [101.564444, 3.228056] as const,
   config: {

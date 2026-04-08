@@ -62,20 +62,27 @@ export function useDealerMapRoute({ mapInstance, route }: UseDealerMapRouteOptio
         return;
       }
 
-      map.addLayer({
-        id: DEALER_ROUTE_LAYER_ID,
-        layout: {
-          "line-cap": "round",
-          "line-join": "round"
+      const beforeLayerId = map.getLayer("dealer-marker-hit-layer")
+        ? "dealer-marker-hit-layer"
+        : undefined;
+
+      map.addLayer(
+        {
+          id: DEALER_ROUTE_LAYER_ID,
+          layout: {
+            "line-cap": "round",
+            "line-join": "round"
+          },
+          paint: {
+            "line-color": "#ee393d",
+            "line-opacity": 0.94,
+            "line-width": 5
+          },
+          source: DEALER_ROUTE_SOURCE_ID,
+          type: "line"
         },
-        paint: {
-          "line-color": "#ee393d",
-          "line-opacity": 0.94,
-          "line-width": 5
-        },
-        source: DEALER_ROUTE_SOURCE_ID,
-        type: "line"
-      });
+        beforeLayerId
+      );
     }
 
     if (map.isStyleLoaded()) {

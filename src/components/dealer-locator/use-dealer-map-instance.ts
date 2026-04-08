@@ -12,10 +12,16 @@ export function useDealerMapInstance() {
       return;
     }
 
+    const observedCanvas = canvasRef.current;
     let isCancelled = false;
     let liveMapInstance: Awaited<ReturnType<typeof createDealerMapInstance>> = null;
+    let resizeObserver: ResizeObserver | null = null;
 
-    void createDealerMapInstance(canvasRef.current)
+    const syncMapSize = () => {
+      liveMapInstance?.resize();
+    };
+
+    void createDealerMapInstance(observedCanvas)
       .then((map) => {
         if (isCancelled) {
           map?.remove();
@@ -29,6 +35,19 @@ export function useDealerMapInstance() {
 
         liveMapInstance = map;
         setMapInstance(map);
+        resizeObserver =
+          typeof ResizeObserver === "undefined"
+            ? null
+            : new ResizeObserver(() => {
+                syncMapSize();
+              });
+
+        resizeObserver?.observe(observedCanvas);
+        window.addEventListener("resize", syncMapSize);
+
+        map.once("load", () => {
+          syncMapSize();
+        });
       })
       .catch(() => {
         if (!isCancelled) {
@@ -38,6 +57,8 @@ export function useDealerMapInstance() {
 
     return () => {
       isCancelled = true;
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", syncMapSize);
       setMapInstance(null);
       liveMapInstance?.remove();
     };

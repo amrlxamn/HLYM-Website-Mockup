@@ -36,6 +36,15 @@ export function useDealerRoute({ destination, origin }: UseDealerRouteOptions) {
     }
 
     const fallbackRoute = createFallbackRoute(origin, destination);
+    const destinationDistanceKilometers = getDistanceBetweenCoordinates(
+      origin,
+      destination.coordinates
+    );
+
+    if (destinationDistanceKilometers > DEALER_LOCATOR_MAP_CONFIG.autoRouteMaxDistanceKilometers) {
+      setRoute(null);
+      return;
+    }
 
     if (!DEALER_LOCATOR_MAP_CONFIG.accessToken) {
       setRoute(fallbackRoute);

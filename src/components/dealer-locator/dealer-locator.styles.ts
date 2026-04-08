@@ -200,56 +200,6 @@ const dealerMapMarkerStyles = css`
   }
 `;
 
-const dealerMapUserMarkerStyles = css`
-  .dealer-map-user-marker {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  .dealer-map-user-marker__ring,
-  .dealer-map-user-marker__dot {
-    border-radius: 999px;
-    display: block;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .dealer-map-user-marker__ring {
-    background: #ffffff22;
-    border: 1px solid #ffffff80;
-    box-shadow: 0 0 0 1px #11111110;
-    height: 34px;
-    width: 34px;
-  }
-
-  .dealer-map-user-marker__dot {
-    background: #111111;
-    box-shadow: 0 0 0 4px #ffffffd9;
-    height: 10px;
-    width: 10px;
-  }
-
-  .dealer-map-user-marker__label {
-    background: #fffffff0;
-    border: 1px solid #ffffff8a;
-    color: #090909;
-    font-size: 10px;
-    font-weight: 700;
-    left: 50%;
-    letter-spacing: 1.6px;
-    padding: 7px 10px;
-    position: absolute;
-    text-transform: uppercase;
-    top: -18px;
-    transform: translate(-50%, -100%);
-    white-space: nowrap;
-  }
-`;
-
 export const DealerLocatorSectionRoot = styled.section`
   background: #0a0a0a;
   min-height: 100vh;
@@ -309,11 +259,11 @@ export const DealerMapBackdrop = styled.div`
   }
 
   ${dealerMapMarkerStyles}
-  ${dealerMapUserMarkerStyles}
 `;
 
 export const DealerMapCanvas = styled.div`
   height: 100%;
+  overflow: hidden;
   position: relative;
   width: 100%;
 
@@ -333,15 +283,57 @@ export const DealerMapCanvas = styled.div`
     cursor: grabbing;
   }
 
+  .mapboxgl-control-container {
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 4;
+  }
+
   .mapboxgl-ctrl-bottom-left,
   .mapboxgl-ctrl-bottom-right {
-    filter: grayscale(1);
-    opacity: 0.74;
-    z-index: 2;
+    bottom: 18px;
+    filter: none;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .mapboxgl-ctrl-bottom-left .mapboxgl-ctrl,
+  .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
+    margin-bottom: 0;
+    pointer-events: auto;
+  }
+
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib.mapboxgl-compact,
+  .mapboxgl-ctrl-attrib-button,
+  a.mapboxgl-ctrl-logo {
+    backdrop-filter: blur(12px);
+    background-color: #ffffffe3;
+    border-radius: 999px;
+    box-shadow: 0 12px 30px #00000012;
+  }
+
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib.mapboxgl-compact {
+    color: #090909;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 10px;
+    padding-right: 28px;
+  }
+
+  .mapboxgl-ctrl-attrib-button {
+    border-radius: 999px;
+  }
+
+  a.mapboxgl-ctrl-logo {
+    background-position: center;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 4px 10px;
   }
 
   ${dealerMapMarkerStyles}
-  ${dealerMapUserMarkerStyles}
 `;
 
 export const DealerHeading = styled.h2`

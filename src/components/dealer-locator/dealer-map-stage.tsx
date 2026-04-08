@@ -9,6 +9,7 @@ type DealerMapStageViewProps = {
   dealers: readonly DealerLocation[];
   onSelectDealer: (dealerId: string) => void;
   route: DealerRoute | null;
+  selectedDealer: DealerLocation;
   selectedDealerId: string;
   userCoordinates: BrowserCoordinates | null;
 };
@@ -17,6 +18,7 @@ export function DealerMapStageView({
   dealers,
   onSelectDealer,
   route,
+  selectedDealer,
   selectedDealerId,
   userCoordinates
 }: DealerMapStageViewProps) {
@@ -29,6 +31,7 @@ export function DealerMapStageView({
           dealers={dealers}
           onSelectDealer={onSelectDealer}
           route={route}
+          selectedDealer={selectedDealer}
           selectedDealerId={selectedDealerId}
           userCoordinates={userCoordinates}
         />

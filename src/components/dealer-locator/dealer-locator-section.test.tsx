@@ -57,7 +57,7 @@ describe("DealerLocatorSection", () => {
     expect(view.getByRole("tab", { name: "sarawak" })).toBeInTheDocument();
     expect(view.getByRole("button", { name: "Show previous dealer" })).toBeInTheDocument();
     expect(view.getByRole("button", { name: "Show next dealer" })).toBeInTheDocument();
-    expect(view.getByText("marker count: 2")).toBeInTheDocument();
+    expect(view.getByText("marker count: 10")).toBeInTheDocument();
     expect(view.getByText("user location idle")).toBeInTheDocument();
   });
 
@@ -82,7 +82,7 @@ describe("DealerLocatorSection", () => {
       expect(view.getByText("brightwill trading sdn bhd")).toBeInTheDocument();
     });
 
-    expect(view.getByText("marker count: 2")).toBeInTheDocument();
+    expect(view.getByText("marker count: 10")).toBeInTheDocument();
     expect(view.getByRole("tab", { name: "northern" })).toHaveAttribute("aria-selected", "true");
   });
 
@@ -95,7 +95,7 @@ describe("DealerLocatorSection", () => {
       expect(view.getByText("inti deras motors sdn bhd")).toBeInTheDocument();
     });
 
-    expect(view.getByText("marker count: 2")).toBeInTheDocument();
+    expect(view.getByText("marker count: 10")).toBeInTheDocument();
   });
 
   it("cycles the dealer info card with the chevron controls", async () => {

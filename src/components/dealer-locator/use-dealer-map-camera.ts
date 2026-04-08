@@ -3,18 +3,17 @@ import type { DealerLocation } from "@/data/site-content.types";
 import type { Map } from "mapbox-gl";
 import { DEALER_LOCATOR_MAP_CONFIG } from "./dealer-locator-map.constants";
 import type { BrowserCoordinates } from "./dealer-location.types";
+import { getDistanceBetweenCoordinates } from "./get-distance-between-coordinates";
 
 type UseDealerMapCameraOptions = {
-  dealers: readonly DealerLocation[];
   mapInstance: Map | null;
-  selectedDealerId: string;
+  selectedDealer: DealerLocation;
   userCoordinates: BrowserCoordinates | null;
 };
 
 export function useDealerMapCamera({
-  dealers,
   mapInstance,
-  selectedDealerId,
+  selectedDealer,
   userCoordinates
 }: UseDealerMapCameraOptions) {
   useEffect(() => {
@@ -22,12 +21,18 @@ export function useDealerMapCamera({
       return;
     }
 
-    const selectedDealer = dealers.find((dealer) => dealer.id === selectedDealerId) ?? dealers[0]!;
     const containerWidth = mapInstance.getContainer().clientWidth;
     const desktopPanelWidth = Math.min(540, Math.round(containerWidth * 0.36));
     const offsetX = containerWidth > 980 ? Math.round(desktopPanelWidth * -0.5) : 0;
+    const dealerDistanceFromUser = userCoordinates
+      ? getDistanceBetweenCoordinates(userCoordinates, selectedDealer.coordinates)
+      : null;
 
-    if (userCoordinates) {
+    if (
+      userCoordinates &&
+      dealerDistanceFromUser !== null &&
+      dealerDistanceFromUser <= DEALER_LOCATOR_MAP_CONFIG.autoRouteMaxDistanceKilometers
+    ) {
       const [userLongitude, userLatitude] = userCoordinates;
       const [dealerLongitude, dealerLatitude] = selectedDealer.coordinates;
 
@@ -62,5 +67,5 @@ export function useDealerMapCamera({
       offset: [offsetX, 0],
       pitch: DEALER_LOCATOR_MAP_CONFIG.pitch
     });
-  }, [dealers, mapInstance, selectedDealerId, userCoordinates]);
+  }, [mapInstance, selectedDealer, userCoordinates]);
 }
