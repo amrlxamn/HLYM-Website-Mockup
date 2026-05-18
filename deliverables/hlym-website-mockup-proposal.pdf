@@ -171,7 +171,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
 endobj
 22 0 obj
-<< /Length 761 >>
+<< /Length 753 >>
 stream
 1 0 0 rg 36 760 540 8 re f
 BT /F2 24 Tf 42 724 Td (HLYM Website Mockup Proposal) Tj ET
@@ -182,7 +182,7 @@ BT /F1 11 Tf 54 616 Td (- Quality: lint, typecheck, tests, build, and security s
 BT /F1 11 Tf 54 598 Td (the project.) Tj ET
 BT /F1 11 Tf 54 576 Td (- Integration-ready areas: Webflow code components, DevLink hooks, and Mapbox) Tj ET
 BT /F1 11 Tf 54 558 Td (dealer stage.) Tj ET
-BT /F1 11 Tf 54 536 Td (- Hosting: Vercel production deployment is already active for stakeholder review.) Tj ET
+BT /F1 11 Tf 54 536 Td (- Hosting: Vercel production deployment is active for stakeholder review.) Tj ET
 endstream
 endobj
 23 0 obj
@@ -287,16 +287,16 @@ xref
 0000007685 00000 n 
 0000008659 00000 n 
 0000008797 00000 n 
-0000009610 00000 n 
-0000009748 00000 n 
-0000010620 00000 n 
-0000010758 00000 n 
-0000011635 00000 n 
-0000011773 00000 n 
-0000012699 00000 n 
-0000012837 00000 n 
+0000009602 00000 n 
+0000009740 00000 n 
+0000010612 00000 n 
+0000010750 00000 n 
+0000011627 00000 n 
+0000011765 00000 n 
+0000012691 00000 n 
+0000012829 00000 n 
 trailer
 << /Size 31 /Root 1 0 R >>
 startxref
-13693
+13685
 %%EOF
