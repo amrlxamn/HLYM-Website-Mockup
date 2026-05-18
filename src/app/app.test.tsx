@@ -1,6 +1,7 @@
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { App } from "@/app/app";
+import { CONTACT_HERO_CONTENT } from "@/features/contact-page";
 import { PRODUCT_HERO_VIDEO } from "@/features/product-page";
 import { SITE_COPY } from "@/data/site-copy.constants";
 import { getAssetUrl } from "@/lib/get-asset-url";
@@ -68,6 +69,22 @@ describe("App", () => {
     expect(view.getByRole("region", { name: "Yamaha NVX overview" })).toBeInTheDocument();
     expect(view.getByRole("region", { name: "Yamaha NVX full specification" })).toBeInTheDocument();
     expect(view.getByRole("heading", { name: "Yamaha NVX SP" })).toBeInTheDocument();
+    expect(
+      view.queryByRole("region", { name: toSentenceCase(SITE_COPY.hero.ariaLabel) })
+    ).toBeNull();
+  });
+
+  it("renders the standalone contact page on the contact route", () => {
+    window.history.replaceState({}, "", "/contact-us");
+
+    const view = render(<App />);
+
+    expect(view.getByRole("region", { name: CONTACT_HERO_CONTENT.ariaLabel })).toBeInTheDocument();
+    expect(
+      view
+        .getAllByRole("link", { name: "contact us" })
+        .some((link) => link.getAttribute("href") === "/contact-us")
+    ).toBe(true);
     expect(
       view.queryByRole("region", { name: toSentenceCase(SITE_COPY.hero.ariaLabel) })
     ).toBeNull();

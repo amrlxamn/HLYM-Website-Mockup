@@ -1,0 +1,48 @@
+import { toSentenceCase } from "@/lib/to-sentence-case";
+import { CONTACT_HERO_CONTENT } from "../constants/contact-hero.constants";
+import {
+  ContactHeroBackground,
+  ContactHeroCardGrid,
+  ContactHeroContentPanel,
+  ContactHeroCopy,
+  ContactHeroGradient,
+  ContactHeroInner,
+  ContactHeroRoot,
+  ContactHeroTitle,
+  ContactHeroVerticalShade
+} from "../styles/contact-hero-shell.styles";
+import type { ContactHeroContent } from "../types/contact-page.types";
+import { ContactHeroSearch } from "./contact-hero-search";
+import { ContactSupportCard } from "./contact-support-card";
+
+type ContactHeroSectionProps = {
+  content?: ContactHeroContent;
+};
+
+export function ContactHeroSection({ content = CONTACT_HERO_CONTENT }: ContactHeroSectionProps) {
+  return (
+    <ContactHeroRoot aria-label={toSentenceCase(content.ariaLabel)} data-cursor-tone="light">
+      <ContactHeroBackground
+        alt={toSentenceCase(content.backgroundAlt)}
+        src={content.backgroundImage}
+      />
+      <ContactHeroGradient />
+      <ContactHeroVerticalShade />
+      <ContactHeroInner>
+        <ContactHeroContentPanel>
+          <ContactHeroTitle>{content.title}</ContactHeroTitle>
+          <ContactHeroCopy>{content.description}</ContactHeroCopy>
+          <ContactHeroSearch
+            ariaLabel={toSentenceCase(content.searchAriaLabel)}
+            placeholder={content.searchPlaceholder}
+          />
+        </ContactHeroContentPanel>
+        <ContactHeroCardGrid>
+          {content.cards.map((card) => (
+            <ContactSupportCard card={card} key={card.number} />
+          ))}
+        </ContactHeroCardGrid>
+      </ContactHeroInner>
+    </ContactHeroRoot>
+  );
+}

@@ -4,6 +4,7 @@ import { SITE_COPY } from "@/data/site-copy.constants";
 import { getAssetUrl } from "@/lib/get-asset-url";
 import { toSentenceCase } from "@/lib/to-sentence-case";
 import { getMenuToggleLabel } from "./get-menu-toggle-label";
+import { getNavLinkActive } from "./get-nav-link-active";
 import { useMainNavigationState } from "./use-main-navigation-state";
 import {
   MainLogo,
@@ -22,7 +23,6 @@ export function MainNavigation() {
   const headerCopy = SITE_COPY.header;
   const menuToggleLabel = getMenuToggleLabel(headerCopy, isMenuOpen);
   const pathname = typeof window === "undefined" ? "/" : window.location.pathname;
-  const isProductsPage = pathname.startsWith("/products");
 
   return (
     <MainNavBar>
@@ -34,11 +34,7 @@ export function MainNavigation() {
           <NavLinks aria-label={toSentenceCase(headerCopy.mainNavigationAriaLabel)}>
             {NAV_LINKS.map((item) => (
               <NavLink
-                $active={
-                  isProductsPage
-                    ? item.href === "/products"
-                    : Boolean(item.isActive && item.href === "/")
-                }
+                $active={getNavLinkActive(item, pathname)}
                 href={item.href}
                 key={item.label}
                 onClick={() => setIsMenuOpen(false)}
