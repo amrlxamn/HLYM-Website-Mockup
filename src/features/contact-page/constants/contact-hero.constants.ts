@@ -14,25 +14,25 @@ export const CONTACT_HERO_CONTENT: ContactHeroContent = {
     },
     {
       ctaHref: "#johor-office",
-      ctaLabel: "Start enquiry",
+      ctaLabel: "View locations",
       number: "02",
       titleLines: ["Johor", "Office"]
     },
     {
       ctaHref: "#faq",
-      ctaLabel: "Browse FAQ",
+      ctaLabel: "View locations",
       number: "03",
       titleLines: ["Pahang", "Office"]
     },
     {
       ctaHref: "#faq",
-      ctaLabel: "Browse FAQ",
+      ctaLabel: "View locations",
       number: "04",
       titleLines: ["Penang", "Office"]
     },
     {
       ctaHref: "#faq",
-      ctaLabel: "Browse FAQ",
+      ctaLabel: "View locations",
       number: "05",
       titleLines: ["Perak", "Office"]
     }
