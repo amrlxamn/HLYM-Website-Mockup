@@ -70,6 +70,7 @@ export type ProductFullSpecificationContent = {
 
 export type ProductFullSpecificationImage = {
   alt: string;
+  frames: readonly string[];
   src: string;
 };
 
