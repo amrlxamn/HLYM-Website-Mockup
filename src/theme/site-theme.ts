@@ -32,6 +32,20 @@ export const siteTheme = {
       subtle: "#00000050"
     }
   },
+  contactHero: {
+    gradients: {
+      leftShade:
+        "linear-gradient(90deg, rgba(10, 10, 10, 0.84) 0%, rgba(10, 10, 10, 0.52) 25%, rgba(10, 10, 10, 0) 58%)",
+      verticalShade:
+        "linear-gradient(180deg, rgba(10, 10, 10, 0.18) 0%, rgba(10, 10, 10, 0) 42%, rgba(10, 10, 10, 0.26) 100%)"
+    },
+    search: {
+      border: "rgba(255, 255, 255, 0.24)",
+      inset: "inset 0 1px 0 rgba(255, 255, 255, 0.18)",
+      shadow: "0 14px 32px -14px rgba(0, 0, 0, 0.28)",
+      surface: "rgba(255, 255, 255, 0.15)"
+    }
+  },
   productColors: {
     electricYellow: "#888a8c",
     violetRush: "#143a52"
