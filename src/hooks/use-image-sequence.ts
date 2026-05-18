@@ -21,6 +21,7 @@ export function useImageSequence(frames: readonly string[]): UseImageSequenceRes
 
     frames.forEach((src, index) => {
       const img = new Image();
+      img.crossOrigin = "anonymous";
       img.src = src;
       img.onload = () => {
         loadedCount += 1;

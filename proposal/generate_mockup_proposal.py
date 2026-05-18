@@ -115,7 +115,7 @@ SLIDES = [
       "Front end: React 18, TypeScript, Vite, styled-components, and Framer Motion.",
       "Quality: lint, typecheck, tests, build, and security scan scripts are defined in the project.",
       "Integration-ready areas: Webflow code components, DevLink hooks, and Mapbox dealer stage.",
-      "Hosting: Vercel production deployment is already active for stakeholder review."
+      "Hosting: Vercel production deployment is active for stakeholder review."
     ],
     "kicker": "Implementation"
   },
