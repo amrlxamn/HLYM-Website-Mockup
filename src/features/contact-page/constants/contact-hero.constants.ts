@@ -35,6 +35,13 @@ export const CONTACT_HERO_CONTENT: ContactHeroContent = {
       ctaLabel: "View locations",
       number: "05",
       titleLines: ["Perak", "Office"]
+    },
+    {
+      ctaHref: "#contact-form",
+      ctaLabel: "Submit to us",
+      number: "06",
+      titleLines: ["Got any", "enquiry?"],
+      tone: "featured"
     }
   ],
   description:

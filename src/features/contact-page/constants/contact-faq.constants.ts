@@ -11,12 +11,6 @@ export const CONTACT_FAQ_CONTENT: ContactFaqContent = {
   description:
     "Browse by topic, or use the search at the top of the page. Most questions are answered here within seconds.",
   emptyMessage: "No FAQs are currently listed for this topic.",
-  feedback: {
-    ctaHref: "#contact-form",
-    ctaLabel: "Get in touch",
-    description: "We are welcome if you got any valuable feedback for us. We are still improving.",
-    title: "Got Feedback For Us?"
-  },
   filterLabel: "Filter by topic",
   items: [
     ...CONTACT_FAQ_GENERAL_ITEMS,

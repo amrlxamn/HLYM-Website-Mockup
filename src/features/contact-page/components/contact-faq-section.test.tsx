@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { CONTACT_FAQ_CONTENT, ContactFaqSection } from "@/features/contact-page";
 
 describe("ContactFaqSection", () => {
-  it("renders FAQ filters, questions, and feedback CTA", async () => {
+  it("renders FAQ filters and questions without the newsletter banner", async () => {
     const user = userEvent.setup();
     const view = render(<ContactFaqSection />);
     const firstQuestion = view.getByRole("button", {
@@ -22,10 +22,7 @@ describe("ContactFaqSection", () => {
     expect(view.getByRole("button", { name: "All" })).toHaveAttribute("aria-pressed", "true");
     expect(CONTACT_FAQ_CONTENT.items).toHaveLength(32);
     expect(view.getByText(/does not provide such services/i)).toBeInTheDocument();
-    expect(view.getByRole("link", { name: /get in touch/i })).toHaveAttribute(
-      "href",
-      CONTACT_FAQ_CONTENT.feedback.ctaHref
-    );
+    expect(view.queryByText("Got Feedback For Us?")).not.toBeInTheDocument();
 
     await user.click(
       view.getByRole("button", {

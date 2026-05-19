@@ -13,7 +13,6 @@ import {
 import type { ContactFaqContent } from "../types/contact-page.types";
 import { ContactFaqItem } from "./contact-faq-item";
 import { ContactFaqTopicFilter } from "./contact-faq-topic-filter";
-import { ContactFeedbackBanner } from "./contact-feedback-banner";
 
 type ContactFaqSectionProps = {
   content?: ContactFaqContent;
@@ -48,7 +47,6 @@ export function ContactFaqSection({ content = CONTACT_FAQ_CONTENT }: ContactFaqS
           )}
         </ContactFaqList>
       </ContactFaqBody>
-      <ContactFeedbackBanner content={content.feedback} />
     </ContactFaqRoot>
   );
 }

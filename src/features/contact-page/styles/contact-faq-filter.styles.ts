@@ -30,7 +30,7 @@ export const ContactFaqTopicButton = styled.button<{ $active: boolean }>`
   font-weight: 700;
   letter-spacing: 1.5px;
   min-height: 24px;
-  padding: 6px 12px;
+  padding: 12px;
   text-align: left;
   text-transform: uppercase;
 `;

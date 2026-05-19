@@ -2,6 +2,7 @@ export type ContactHeroCard = {
   ctaHref: string;
   ctaLabel: string;
   number: string;
+  tone?: "featured";
   titleLines: readonly string[];
 };
 
@@ -23,18 +24,10 @@ export type ContactFaqItem = {
   topic: string;
 };
 
-export type ContactFeedbackBanner = {
-  ctaHref: string;
-  ctaLabel: string;
-  description: string;
-  title: string;
-};
-
 export type ContactFaqContent = {
   ariaLabel: string;
   description: string;
   emptyMessage: string;
-  feedback: ContactFeedbackBanner;
   filterLabel: string;
   items: readonly ContactFaqItem[];
   title: string;
